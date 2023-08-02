@@ -1,0 +1,58 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: admin_panel
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: 'Admin Panel'
+              icon: text
+              localizable: false
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              hide_display: false
+          -
+            handle: news
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: News
+              icon: text
+              localizable: false
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              hide_display: false
+          -
+            handle: our_partners
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: 'Our Partners'
+              icon: text
+              localizable: false
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              hide_display: false
+          -
+            handle: contact_us
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: 'Contact us'
+              icon: text
+              localizable: false
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              hide_display: false

@@ -1,0 +1,16 @@
+title: news
+sites:
+  - default
+  - ru
+  - uz
+propagate: false
+template: default
+layout: layout
+revisions: false
+route: "/news/{slug}"
+date: true
+sort_dir: asc
+preview_targets:
+  - label: Entry
+    url: "{permalink}"
+    refresh: true

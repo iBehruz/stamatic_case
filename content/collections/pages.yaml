@@ -1,0 +1,17 @@
+title: Pages
+sites:
+  - default
+  - ru
+  - uz
+propagate: false
+template: home
+layout: layout
+revisions: false
+route: "{parent_uri}/{slug}"
+sort_dir: asc
+preview_targets:
+  - label: Entry
+    url: "{permalink}"
+    refresh: true
+structure:
+  root: true

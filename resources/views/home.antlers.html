@@ -1,0 +1,252 @@
+
+<!-- Courusel Banner -->
+<div
+  id="carouselExampleCaptions"
+  class="relative"
+  data-te-carousel-init
+  data-te-ride="carousel">
+  <!--Carousel indicators-->
+  <div
+    class="absolute bottom-0 left-0 right-0 z-[2] mx-[15%] mb-4 flex list-none justify-center p-0"
+    data-te-carousel-indicators>
+    <button
+      type="button"
+      data-te-target="#carouselExampleCaptions"
+      data-te-slide-to="0"
+      data-te-carousel-active
+      class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
+      aria-current="true"
+      aria-label="Slide 1"></button>
+    <button
+      type="button"
+      data-te-target="#carouselExampleCaptions"
+      data-te-slide-to="1"
+      class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
+      aria-label="Slide 2"></button>
+    <button
+      type="button"
+      data-te-target="#carouselExampleCaptions"
+      data-te-slide-to="2"
+      class="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
+      aria-label="Slide 3"></button>
+  </div>
+
+  <!--Carousel items-->
+  <div
+    class="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
+
+    {{ banner }}
+
+    {{if index === 0}}
+    <div
+      class="relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+      data-te-carousel-active
+      data-te-carousel-item
+      style="backface-visibility: hidden">
+      <img
+        src="{{ url }}"
+        class="block w-full"
+        alt="..." />
+    </div>
+    {{ else }}
+    <div
+      class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+      data-te-carousel-item
+      style="backface-visibility: hidden">
+      <img
+        src="{{ url }}"
+        class="block w-full"
+        alt="..." />
+    </div>
+    {{ endif }}
+
+    {{ /banner }}
+
+  </div>
+
+  <!--Carousel controls - prev item-->
+  <button
+    class="absolute bottom-0 left-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
+    type="button"
+    data-te-target="#carouselExampleCaptions"
+    data-te-slide="prev">
+    <span class="inline-block h-8 w-8">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="h-6 w-6">
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M15.75 19.5L8.25 12l7.5-7.5" />
+      </svg>
+    </span>
+    <span
+      class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
+      >Previous</span
+    >
+  </button>
+  <!--Carousel controls - next item-->
+  <button
+    class="absolute bottom-0 right-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
+    type="button"
+    data-te-target="#carouselExampleCaptions"
+    data-te-slide="next">
+    <span class="inline-block h-8 w-8">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="h-6 w-6">
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+      </svg>
+    </span>
+    <span
+      class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
+      >Next</span
+    >
+  </button>
+</div>
+<!-- End Courusel Banner -->
+
+<!-- Last 3 news -->
+ 
+<section class="text-gray-600 body-font">
+    <div class="container px-5 py-24 mx-auto">
+        <div class="flex flex-col text-center w-full mb-20">
+            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">{{ msg:news }}</h1>
+          </div>
+      <div class="flex flex-wrap -mx-4 -my-8">
+        
+        {{ collection:news  paginate="3" as="posts" }}
+       
+        {{ if no_results }}
+            <p>...</p>
+        {{ /if }}
+    
+        {{ posts }}
+
+        <div class="py-8 px-4 lg:w-1/3">
+            <div class="h-full flex items-start">
+              <div class="w-12 flex-shrink-0 flex flex-col text-center leading-none">
+                <span class="text-gray-500 pb-2 mb-2 border-b-2 border-gray-200">{{ date format="F" }}</span>
+                <span class="font-medium text-lg text-gray-800 title-font leading-none">{{ date format="d"}}</span>
+              </div>
+              <div class="flex-grow pl-6">
+                  <a href="{{ url }}" >  <h1 class="title-font text-xl font-medium text-gray-900 mb-3">{{ title }}</h1></a>
+                <p class="leading-relaxed mb-5">{{ content | substr(0, 210) }}...</p>
+                <div style="height: 10px;"></div>
+                <a class="inline-flex items-center">
+                  
+                  <img alt="blog" src="https://dummyimage.com/103x103" class="w-8 h-8 rounded-full flex-shrink-0 object-cover object-center">
+                  <span class="flex-grow flex flex-col pl-3">
+                    <span class="title-font font-medium text-gray-900">{{ author:name  }}</span>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        {{ /posts }}
+        <div class="flex flex-col text-center w-full mb-20">
+            {{ paginate }}
+            {{ if current_page != 1 }}
+                <a href="{{ prev_page }}">⬅ Previous</a>
+            {{ /if }}
+            
+    
+          {{ if current_page != total_pages }}
+            <a href="{{ next_page }}">Next ➡</a>
+          {{ /if }}
+        {{ /paginate }}
+          </div>
+
+        
+        {{ /collection:news }}
+      </div>
+    </div>
+  </section>
+  <!-- End Last 3 news -->
+<!-- Partners -->
+<section class="text-gray-600 body-font">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="flex flex-col text-center w-full mb-20">
+        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">{{ msg:our_partners }}</h1>
+      </div>
+      <div class="flex flex-wrap -m-4">
+        {{ partners }}
+        <div class="lg:w-1/3 sm:w-1/2 p-4">
+          <div class="flex relative cursor-pointer">
+           <a href="{{ url }}" target="_blank"> <img alt="gallery" src="{{ img }}"> </a> 
+          </div>
+        </div>
+        {{ /partners }}
+
+
+      </div>
+    </div>
+  </section>
+
+  <!--End Partners -->
+
+
+  {{ form:contact_us }}
+ 
+   {{ if success }}
+        <div class="bg-green-300 text-white p-2">
+            {{ success }}
+        </div>
+    {{ else }}
+
+        {{ if errors }}
+            <div class="bg-red-300 text-white p-2">
+                {{ errors }}
+                    {{ value }}<br>
+                {{ /errors }}
+            </div>
+        {{ /if }}
+        <section class="text-gray-600 body-font relative">
+            <div class="container px-5 py-24 mx-auto">
+              <div class="flex flex-col text-center w-full mb-12">
+                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">{{ msg:contact_us }}</h1>
+              </div>
+              <div class="flex items-center justify-center">
+                <div class="w-1/3">
+        
+                {{ fields }}
+                  <div class="p-2 w-full">
+                    <div class="relative">
+                      <label class="leading-7 text-sm text-gray-600">{{ display }}</label>
+                      <div class="p-1 contact_us_form flex w-full">{{ field }}</div>
+                      
+                      {{ if error }}
+                      <p class="text-gray-500">{{ error }}</p>
+                     {{ /if }}
+                    </div>
+                  </div>
+                {{ /fields }}
+        
+                  <input type="text" class="hidden" name="{{ honeypot ?? 'honeypot' }}">
+                  <div class="p-2 w-full">
+                    <button type="submit" class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Submit</button>
+                  </div>
+        
+                </div>
+              </div>
+            </div>
+          </section>
+    {{ /if }}
+ 
+{{ /form:contact_us }}
+
+
+
+
